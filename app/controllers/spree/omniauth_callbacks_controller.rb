@@ -18,6 +18,8 @@ class Spree::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     provides_callback_for provider
   end
 
+  after_action :set_current_order, only: Spree::SocialConfig.providers.keys
+
   def omniauth_callback
     if request.env['omniauth.error'].present?
       flash[:error] = I18n.t('devise.omniauth_callbacks.failure', kind: auth_hash['provider'], reason: I18n.t('spree.user_was_not_valid'))
