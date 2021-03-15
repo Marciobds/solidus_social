@@ -8,7 +8,7 @@
   <% if can? :manage, Spree::AuthenticationMethod %>
     <ul class="actions inline-menu">
       <li>
-        <%= link_to I18n.t('spree.new_social_method'), new_object_url, id: 'admin_new_slide_link', { class: 'btn btn-primary' } %>
+        <%= link_to I18n.t('spree.new_social_method'), new_object_url, { id: 'admin_new_slide_link', class: 'btn btn-primary' } %>
       </li>
     </ul>
   <% end %>
